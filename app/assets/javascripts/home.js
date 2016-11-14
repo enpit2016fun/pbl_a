@@ -2,10 +2,13 @@
 // All this logic will automatically be available in application.js.
 function searchFeeling(){
     var feeling = document.searchForm.feelings.value;
-    console.log(feeling);
-    window.location.href = 'search.html';
+    window.location.href = feeling;
 }
 
 function iconSelect(){
- 
+}
+
+function dropsort() {
+    var browser = document.sort_form.sort.value;
+    location.href = browser
 }
