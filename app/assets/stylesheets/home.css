@@ -5,77 +5,10 @@ html, body {
     background: #fff;
 }
 
-
-
-select{
-    position:relative;
-    overflow:hidden;
-    display:inline-block;
-    min-width:192px;
-    min-width:12em;
-    margin: 10px;
-    padding:11px 35px 11px 11px;
-    padding:.6875rem 2.1875rem .6875rem .6875rem;
-    background-color:#ffffff;
-    background-image:-webkit-linear-gradient(top, #ffffff 0%, #dfe0d9 100%);
-    background-image:linear-gradient(top, #ffffff 0%, #dfe0d9 100%);
-    border:1px solid #c0c0c0;
-    font-size:18px;
-    font-size:1rem;
-    color:#333;
-    float: right;
-}
-
-button{
-    width: auto;
-    padding:0;
-    margin-top:15px;
-    margin-bottom:15px;
-    margin-left:15px;
-    background:none;
-    border:0;
-    font-size:0;
-    line-height:0;
-    overflow:visible;
-    cursor:pointer;
-}
-
-h1{
-    font: メイリオ;
-    color: #fff;
-}
-
-
-#header {
-    width: 100%;
-    height: 60px;
-    background: #ff6347;
-}
-#search { 
-    width: 50%;
-    height: 60px;
-    float: right;
-}
-
-#apli_name{
-    width:50%;
-    height: 60px;
-    float: left;
-}
-
 #map { 
     width: 100%;
-    height: 540px;
+    height: calc(100% - 64px);
       }
-
-#bottom_bar{
-    width: 100%;
-    height: 60px;
-    border-top:2px;
-    background: #ff6347;
+.dropdown-content{
+    left: -50px;
 }
-
-#icons {
-    height: 30px;
-}
-

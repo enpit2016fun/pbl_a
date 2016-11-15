@@ -4,32 +4,42 @@
       <meta charset="utf-8" />
       <title>ここlogue - 気持ちでつながるSNS</title>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
       <script type="text/javascript" src="assets/home.js"></script>
       <link rel="stylesheet" href="assets/home.css" />
       <!--link rel="stylesheet" href="css/jquery-ui.css" /-->
   </head>
   <body>
+
+    <nav>
+      <div class="nav-wrapper red lighten-3">
+        <a class="brand-logo left" href="/">ここlogue</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown" data-beloworigin="true">Filter<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+
+        <!-- Dropdown Structure -->
+        <ul id="dropdown" class="right dropdown-content collection">
+          <li><a href="/anticipacion">ANTICIPACION</a></li>
+          <li><a href="/joy">JOY</a></li>
+          <li><a href="/trust">TRUST</a></li>
+          <li><a href="/fear">FEAR</a></li>
+          <li><a href="/surprize">SURPRIZE</a></li>
+          <li><a href="/sadness">SADNESS</a></li>
+          <li><a href="/disugust">DISUGUST</a></li>
+          <li><a href="/anger">ANGER</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div id="map">
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_98BCdnduT2kWcJy3CX-T7GQg9szl8fw&callback=initMap"></script>
-      <div id="header">
-          <div id = "apli_name">
-          <h1>ここlogue</h1>
-          </div>
-          <form name = "searchForm">
-          <div id = "search"> 
-          <select name="feelings" onchange="searchFeeling()">
-              <option value="anticipacion">ANTICIPACION</option>
-              <option value="joy">JOY</option>
-              <option value="trust">TRUST</option>
-              <option value="fear">FEAR</option>
-              <option value="surprize">SURPRIZE</option>
-              <option value="sadness">SADNESS</option>
-              <option value="disugust">DISUGUST</option>
-              <option value="anger">ANGER</option>
-          </select>
-              </form>
-          </div>
-      </div><!--#header-->
-    <div id="map"></div><!--#map-->
+    </div><!--#map-->
 
     <script type="text/javascript">
 
@@ -41,7 +51,5 @@ function initMap() {
   });
 }
     </script>
-      <div id = "bottom_bar">
-      </div><!--#bottom_bar-->
   </body>
 </html>
