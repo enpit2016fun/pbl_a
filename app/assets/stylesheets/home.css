@@ -7,8 +7,18 @@ html, body {
 
 #map { 
     width: 100%;
-    height: calc(100% - 64px);
+    height: calc(100% - 114px);
       }
+
 .dropdown-content{
     left: -50px;
+}
+
+#bottom_bar{
+    height: 50px;
+}
+
+#icons{
+    position:relative;
+    top: 7px;
 }
