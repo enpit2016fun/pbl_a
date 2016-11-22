@@ -41,34 +41,32 @@
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_98BCdnduT2kWcJy3CX-T7GQg9szl8fw&callback=initMap"></script>
     </div><!--#map-->
 
-    <script type="text/javascript">
-
-var map;
-function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 41.84181747, lng: 140.7669687},
-    zoom: 14
-  });
-}
-    </script>
     <div id = "bottom_bar" class="deep-orange lighten-4">
       <div id = "icons">
-        <a class="btn-floating btn-small waves-effect waves-light white"><img src="./feelings/img01.png" width="40px" height="40px"></a>
-        <a class="btn-floating btn-small waves-effect waves-light white"><img src="./feelings/img02.png" width="40px" height="40px"></a>
-        <a class="btn-floating btn-small waves-effect waves-light white"><img src="./feelings/img03.png" width="40px" height="40px"></a>
-        <a class="btn-floating btn-small waves-effect waves-light white"><img src="./feelings/img05.png" width="40px" height="40px"></a>
-        <a class="btn-floating btn-small waves-effect waves-light white"><img src="./feelings/img06.png" width="40px" height="40px"></a>
-        <a class="btn-floating btn-small waves-effect waves-light white"><img src="./feelings/img11.png" width="40px" height="40px"></a>
-        <a class="btn-floating btn-small waves-effect waves-light white"><img src="./feelings/img12.png" width="40px" height="40px"></a>
-        <a class="btn-floating btn-small waves-effect waves-light white"><img src="./feelings/img13.png" width="40px" height="40px"></a>
-        <!--<button onclick="iconSelect()"><img src="./feelings/img01.png" width="30px" height="30px"></button>
-        <button><img src="/feelings/img02.png" width="30px" height="30px"></button>
-        <button><img src="/feelings/img03.png" width="30px" height="30px"></button>
-        <button><img src="/feelings/img05.png" width="30px" height="30px"></button>
-        <button><img src="/feelings/img06.png" width="30px" height="30px"></button>
-        <button><img src="/feelings/img11.png" width="30px" height="30px"></button>
-        <button><img src="/feelings/img12.png" width="30px" height="30px"></button>
-        <button><img src="/feelings/img13.png" width="30px" height="30px"></button>-->
+        <a id="anticipacion-icon" class="btn-floating btn-small waves-effect waves-light white" onclick="flag(0)">
+          <img src="./feelings/img01.png" width="40px" height="40px">
+        </a>
+        <a id="joy-icon" class="btn-floating btn-small waves-effect waves-light white" onclick="flag(1)">
+          <img src="./feelings/img02.png" width="40px" height="40px">
+        </a>
+        <a id="trust-icon" class="btn-floating btn-small waves-effect waves-light white" onclick="flag(2)">
+          <img src="./feelings/img03.png" width="40px" height="40px">
+        </a>
+        <a id="fear-icon" class="btn-floating btn-small waves-effect waves-light white" onclick="flag(3)">
+          <img src="./feelings/img05.png" width="40px" height="40px">
+        </a>
+        <a id="surprize-icon" class="btn-floating btn-small waves-effect waves-light white" onclick="flag(4)">
+          <img src="./feelings/img06.png" width="40px" height="40px">
+        </a>
+        <a id="sadness-icon" class="btn-floating btn-small waves-effect waves-light white" onclick="flag(5)">
+          <img src="./feelings/img11.png" width="40px" height="40px">
+        </a>
+        <a id="disugust-icon" class="btn-floating btn-small waves-effect waves-light white" onclick="flag(6)">
+          <img src="./feelings/img12.png" width="40px" height="40px">
+        </a>
+        <a id="anger-icon" class="btn-floating btn-small waves-effect waves-light white" onclick="flag(7)">
+          <img src="./feelings/img13.png" width="40px" height="40px">
+        </a>
       </div><!--#icons-->
     </div><!--#bottom_bar-->
   </body>
