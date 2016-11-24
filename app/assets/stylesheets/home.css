@@ -22,3 +22,8 @@ html, body {
     position:relative;
     top: 7px;
 }
+
+#walk_button{
+    top: 5px;
+    right: 10px;
+}
