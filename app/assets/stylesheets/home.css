@@ -1,0 +1,24 @@
+html, body { 
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+
+#map { 
+    width: 100%;
+    height: calc(100% - 114px);
+      }
+
+.dropdown-content{
+    left: -50px;
+}
+
+#bottom_bar{
+    height: 50px;
+}
+
+#icons{
+    position:relative;
+    top: 7px;
+}
