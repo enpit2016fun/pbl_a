@@ -18,3 +18,8 @@ end
 CSV.foreach('db/feeling.csv') do |row|
   Feeling.create(:memid => row[0], :spotid => row[1], :emotion => row[2], :comment => row[3])
 end
+
+CSV.foreach('db/sensation.csv') do |row|
+  Sensation.create(:lon => row[0], :lat => row[1], :nickname => row[2], :emotion => row[3], :comment => row[4])
+end
+

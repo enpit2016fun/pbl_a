@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161129055723) do
+ActiveRecord::Schema.define(version: 20161130012306) do
 
   create_table "feelings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "memid"
@@ -27,6 +27,16 @@ ActiveRecord::Schema.define(version: 20161129055723) do
     t.integer  "age"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "sensations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.decimal  "lon",                      precision: 10
+    t.decimal  "lat",                      precision: 10
+    t.string   "nickname"
+    t.integer  "emotion"
+    t.text     "comment",    limit: 65535
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
   end
 
   create_table "spots", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
