@@ -27,3 +27,12 @@ html, body {
     top: 5px;
     right: 10px;
 }
+
+#icons {
+    height: 40px;
+}
+
+#icons a{
+    margin-left: 10px;
+}
+
