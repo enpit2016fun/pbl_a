@@ -46,34 +46,24 @@ function way(){
 }
 
 //フィルター後の画面遷移時にマーカーを設置する(場所とアイコンのデータは決め打ち)
-function searchMarker(){
-    var anticipacion_point = [
-    {"lat": 41.796959902027965, "lng": 140.75696468353271},
-    {"lat": 41.799215430653845, "lng": 140.75893878936768},
-    {"lat": 41.79598408135528, "lng": 140.7599687576294},
-    {"lat": 41.794496326162594, "lng": 140.755934715271},
-    {"lat": 41.794320352834355, "lng": 140.7530701160431}
-    ];
-
-    for(var i=0;i<5;i++){
-      mark_latlng = new google.maps.LatLng(anticipacion_point[i]["lat"], anticipacion_point[i]["lng"]);
-      var marker = new google.maps.Marker({
-        position: mark_latlng,
-        map: map,
-        icon: './feelingsresize/img01.png'
-      }); 
-    }  
+function searchMarker(lat, lon, emotion){
+  mark_latlng = new google.maps.LatLng(lat, lon);
+  var marker = new google.maps.Marker({
+    position: mark_latlng,
+    map: map,
+    icon: './feelings/img'+emotion+'.png'
+  }); 
 }
 
 function addMarker(location, flag_id) {
-    var image = ['./feelingsresize/img01.png',
-                 './feelingsresize/img02.png',
-                 './feelingsresize/img03.png',
-                 './feelingsresize/img05.png',
-                 './feelingsresize/img06.png',
-                 './feelingsresize/img11.png',
-                 './feelingsresize/img12.png',
-                 './feelingsresize/img13.png'];
+    var image = ['./feelings/img1.png',
+                 './feelings/img2.png',
+                 './feelings/img3.png',
+                 './feelings/img4.png',
+                 './feelings/img5.png',
+                 './feelings/img6.png',
+                 './feelings/img7.png',
+                 './feelings/img8.png'];
     
     console.log("flag="+flag_id);
     var marker = new google.maps.Marker({
