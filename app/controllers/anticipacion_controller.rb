@@ -1,0 +1,2 @@
+class AnticipacionController < ApplicationController
+end

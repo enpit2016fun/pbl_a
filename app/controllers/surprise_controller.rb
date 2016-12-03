@@ -1,0 +1,2 @@
+class SurpriseController < ApplicationController
+end

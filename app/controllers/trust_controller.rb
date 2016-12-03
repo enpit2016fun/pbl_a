@@ -1,0 +1,2 @@
+class TrustController < ApplicationController
+end

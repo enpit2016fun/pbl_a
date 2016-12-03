@@ -1,0 +1,2 @@
+class FearController < ApplicationController
+end

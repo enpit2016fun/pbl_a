@@ -1,0 +1,2 @@
+class SadnessController < ApplicationController
+end
