@@ -14,13 +14,13 @@ class SearchController < ApplicationController
   def fear
   end
 
-  def surprize
+  def surprise
   end
 
   def sadness
   end
 
-  def disugust
+  def disgust
   end
 
   def anger
