@@ -2,15 +2,16 @@
 // All this logic will automatically be available in application.js.
 var map;
 var flag_id = 0;
-function initMap() {
+function initMap(view_id) {
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 41.84181747, lng: 140.7669687},
     zoom: 14
   });
-
-  map.addListener('click', function(event) {
-    addMarker(event.latLng, flag_id);
-  });
+  if(view_id==0){
+    map.addListener('click', function(event) {
+      addMarker(event.latLng, flag_id);
+    });
+  }
 
 }
 

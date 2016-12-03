@@ -39,10 +39,10 @@
       </div>
     </nav>
     <div id="map">
-      <script language="JavaScript">initMap();</script>
+      <script language="JavaScript">initMap(0);</script>
     </div><!--#map-->
 
-    <% @sensations.each do |sensation| %>
+    <% Array(@sensations).each do |sensation| %>
       <script language="JavaScript">
         searchMarker(<%= sensation.lat %>, <%= sensation.lon %>, <%= sensation.emotion %>);
       </script>
