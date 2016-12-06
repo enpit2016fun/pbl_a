@@ -1,7 +1,7 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 var map;
-var flag_id = 0;
+var flag_id = 1;
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 41.84181747, lng: 140.7669687},
@@ -78,7 +78,7 @@ function addMarker(location, flag_id) {
     var marker = new google.maps.Marker({
         position: location,
         map: map,
-        icon: image[flag_id]
+        icon: image[flag_id-1]
     });
 }
 
