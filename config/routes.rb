@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   get 'disgust' => 'search#disgust'
   get 'anger' => 'search#anger'
   get 'search' => 'search#index'
+  post 'sensations/new' => 'sensations#new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

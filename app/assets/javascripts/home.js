@@ -9,13 +9,17 @@ function initMap() {
   });
 }
 
-// $(function(){
-//   $('.home_map').click(function(e){
-//     map.addListener('click', function(event) {
-//       addMarker(event.latLng, flag_id);
-//     });
-//   });
-// });
+$(function(){
+    map.addListener('click', function(event) {
+      addMarker(event.latLng, flag_id);
+      $.post("/sensations/new", {
+        "lat": event.latLng.lat(),
+        "lon": event.latLng.lng(),
+        "emotion": flag_id,
+        "authenticity_token": $("#authenticity_token").val()
+      })
+    });
+});
 
 //散歩ルートの描画(場所データは決め打ち)
 function way(){

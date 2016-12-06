@@ -40,22 +40,12 @@
     </nav>
     <div id="map" class="home_map">
       <script language="JavaScript">initMap();</script>
-
-      <script language="JavaScript">
-        $('.home_map').click(function(e){
-          map.addListener('click', function(event) {
-            addMarker(event.latLng, flag_id);
-
-          });
-        });
-      </script>
-      <!-- クリックした位置の緯度経度(home.js)を含めたデータをDBに追加したい -->
+      <%= hidden_field_tag "authenticity_token", form_authenticity_token %>
     </div><!--#map-->
 
     <% Array(@sensations).each do |sensation| %>
       <script language="JavaScript">
         searchMarker(<%= sensation.lat %>, <%= sensation.lon %>, <%= sensation.emotion %>);
-
       </script>
     <% end %>
     
