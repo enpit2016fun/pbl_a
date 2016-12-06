@@ -77,3 +77,6 @@ function dropsort() {
 function flag(i){
     flag_id=i;
 }
+function isWalk(){
+  walk = true;
+}
