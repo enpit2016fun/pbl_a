@@ -2,18 +2,20 @@
 // All this logic will automatically be available in application.js.
 var map;
 var flag_id = 0;
-function initMap(view_id) {
+function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 41.84181747, lng: 140.7669687},
     zoom: 14
   });
-  if(view_id==0){
-    map.addListener('click', function(event) {
-      addMarker(event.latLng, flag_id);
-    });
-  }
-
 }
+
+// $(function(){
+//   $('.home_map').click(function(e){
+//     map.addListener('click', function(event) {
+//       addMarker(event.latLng, flag_id);
+//     });
+//   });
+// });
 
 //散歩ルートの描画(場所データは決め打ち)
 function way(){
@@ -67,6 +69,8 @@ function addMarker(location, flag_id) {
                  './feelings/img8.png'];
     
     console.log("flag="+flag_id);
+    console.log("lat="+location.lat());
+    console.log("lng="+location.lng());
     var marker = new google.maps.Marker({
         position: location,
         map: map,
