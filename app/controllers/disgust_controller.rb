@@ -1,0 +1,2 @@
+class DisgustController < ApplicationController
+end

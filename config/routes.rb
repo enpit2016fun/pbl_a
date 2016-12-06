@@ -5,10 +5,11 @@ Rails.application.routes.draw do
   get 'anticipacion' => 'search#anticipacion'
   get 'trust' => 'search#trust'
   get 'fear' => 'search#fear'
-  get 'surprize' => 'search#surprize'
+  get 'surprise' => 'search#surprise'
   get 'sadness' => 'search#sadness'
-  get 'disugust' => 'search#disugust'
+  get 'disgust' => 'search#disgust'
   get 'anger' => 'search#anger'
   get 'search' => 'search#index'
+  post 'sensations/new' => 'sensations#new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

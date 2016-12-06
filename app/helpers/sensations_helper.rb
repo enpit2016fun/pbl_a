@@ -1,0 +1,2 @@
+module SensationsHelper
+end

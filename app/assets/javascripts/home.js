@@ -1,18 +1,25 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 var map;
-var flag_id = 0;
+var flag_id = 1;
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 41.84181747, lng: 140.7669687},
     zoom: 14
   });
-
-  map.addListener('click', function(event) {
-    addMarker(event.latLng, flag_id);
-  });
-
 }
+
+$(function(){
+    map.addListener('click', function(event) {
+      addMarker(event.latLng, flag_id);
+      $.post("/sensations/new", {
+        "lat": event.latLng.lat(),
+        "lon": event.latLng.lng(),
+        "emotion": flag_id,
+        "authenticity_token": $("#authenticity_token").val()
+      })
+    });
+});
 
 //散歩ルートの描画(場所データは決め打ち)
 function way(){
@@ -46,40 +53,32 @@ function way(){
 }
 
 //フィルター後の画面遷移時にマーカーを設置する(場所とアイコンのデータは決め打ち)
-function searchMarker(){
-    var anticipacion_point = [
-    {"lat": 41.796959902027965, "lng": 140.75696468353271},
-    {"lat": 41.799215430653845, "lng": 140.75893878936768},
-    {"lat": 41.79598408135528, "lng": 140.7599687576294},
-    {"lat": 41.794496326162594, "lng": 140.755934715271},
-    {"lat": 41.794320352834355, "lng": 140.7530701160431}
-    ];
-
-    for(var i=0;i<5;i++){
-      mark_latlng = new google.maps.LatLng(anticipacion_point[i]["lat"], anticipacion_point[i]["lng"]);
-      var marker = new google.maps.Marker({
-        position: mark_latlng,
-        map: map,
-        icon: './feelingsresize/img01.png'
-      }); 
-    }  
+function searchMarker(lat, lon, emotion){
+  mark_latlng = new google.maps.LatLng(lat, lon);
+  var marker = new google.maps.Marker({
+    position: mark_latlng,
+    map: map,
+    icon: './feelings/img'+emotion+'.png'
+  }); 
 }
 
 function addMarker(location, flag_id) {
-    var image = ['./feelingsresize/img01.png',
-                 './feelingsresize/img02.png',
-                 './feelingsresize/img03.png',
-                 './feelingsresize/img05.png',
-                 './feelingsresize/img06.png',
-                 './feelingsresize/img11.png',
-                 './feelingsresize/img12.png',
-                 './feelingsresize/img13.png'];
+    var image = ['./feelings/img1.png',
+                 './feelings/img2.png',
+                 './feelings/img3.png',
+                 './feelings/img4.png',
+                 './feelings/img5.png',
+                 './feelings/img6.png',
+                 './feelings/img7.png',
+                 './feelings/img8.png'];
     
     console.log("flag="+flag_id);
+    console.log("lat="+location.lat());
+    console.log("lng="+location.lng());
     var marker = new google.maps.Marker({
         position: location,
         map: map,
-        icon: image[flag_id]
+        icon: image[flag_id-1]
     });
 }
 
