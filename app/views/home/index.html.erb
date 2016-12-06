@@ -45,8 +45,7 @@
         $('.home_map').click(function(e){
           map.addListener('click', function(event) {
             addMarker(event.latLng, flag_id);
-            <% register = Sensation.new(lon: event.latlng.lon, lat: event.latlng.lat, emotion: flag_id) %> 
-            <% Sensation.import(register) %>
+
           });
         });
       </script>
