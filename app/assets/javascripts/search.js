@@ -31,6 +31,7 @@ function way(lat, lng){
 
   var point = new Array();
   sumDistance = 0;
+  var cnt = 0;
 
   point[0] = {lat:lat, lng:lng};
   var feel;
@@ -52,9 +53,10 @@ function way(lat, lng){
     feel = gon.sensation;
   
   while(sumDistance<3000){
-    var min = minDistance(lat, lng, feel);
+    var min = minDistance(point[cnt].lat, point[cnt].lng, feel);
     point.push({lat:Number(feel[min].lat), lng:Number(feel[min].lon)});
     feel.splice(min,1);
+    cnt += 1;
   }
   point.pop();//3km超えた分の配列の要素を削除
 
