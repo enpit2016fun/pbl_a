@@ -36,3 +36,9 @@ html, body {
     margin-left: 10px;
 }
 
+.logo img {
+position:absolute;
+top: 50%;
+height: 60px;
+}
+
