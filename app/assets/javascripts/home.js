@@ -39,10 +39,7 @@ function addMarker(location, flag_id) {
                  './feelings/img6.png',
                  './feelings/img7.png',
                  './feelings/img8.png'];
-
-    console.log("flag="+flag_id);
-    console.log("lat="+location.lat());
-    console.log("lng="+location.lng());
+                 
     var marker = new google.maps.Marker({
         position: location,
         map: map,
