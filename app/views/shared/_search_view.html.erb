@@ -3,6 +3,7 @@
   <head>
       <meta charset="utf-8" />
       <title>ここlogue - 気持ちでつながるSNS</title>
+      <%= include_gon %>
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBp2i1X61b72NGPlgaljJaYvP0SywGMb28"></script>
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -13,7 +14,7 @@
 
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-      <script type="text/javascript" src="assets/home.js"></script>
+      <script type="text/javascript" src="assets/search.js"></script>
       <link rel="stylesheet" href="assets/home.css" />
       <!--link rel="stylesheet" href="css/jquery-ui.css" /-->
   </head>
@@ -23,7 +24,7 @@
       <div class="nav-wrapper deep-orange lighten-4">
         <a class="brand-logo left" href="/">ここlogue</a>
         <ul class="right">
-          <li><a href"...." onclick="way()">Walking<img src="./feelings/sampo.png" width="15px" height="30px"></a></li>
+          <li><a href"...." onclick="isWalk()">Walking<img src="./feelings/sampo.png" width="15px" height="30px"></a></li>
           <li><a class="dropdown-button" href="#!" data-activates="dropdown" data-beloworigin="true">Search<i class="material-icons right white-text">search</i></a></li>
         </ul>
 
@@ -45,8 +46,9 @@
     </div><!--#map-->
     <% Array(sensations).each do |sensation| %>
       <script language="JavaScript">
-        searchMarker(<%= sensation.lat %>, <%= sensation.lon %>, <%= sensation.emotion %>);
+        plotMarker(<%= sensation.lat %>, <%= sensation.lon %>, <%= sensation.emotion %>);
         console.log("id="+<%= sensation.id %>+", emotions="+<%= sensation.emotion %>+", コメント="+"<%= sensation.comment %>");
+        flag(<%= sensation.emotion %>);
       </script>
     <% end %>
     <div id="bottom_bar" class="deep-orange lighten-4">
