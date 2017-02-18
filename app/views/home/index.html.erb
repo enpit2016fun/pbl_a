@@ -45,7 +45,7 @@
 
     <% Array(@sensations).each do |sensation| %>
       <script language="JavaScript">
-        plotMarker(<%= sensation.lat %>, <%= sensation.lon %>, <%= sensation.emotion %>);
+        plotMarker(<%= sensation.lat %>, <%= sensation.lon %>, <%= sensation.emotion %>, '<%= sensation.comment%>');
       </script>
     <% end %>
     

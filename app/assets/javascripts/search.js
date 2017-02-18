@@ -83,13 +83,29 @@ function way(lat, lng){
   }
 }
 
-function plotMarker(lat, lon, emotion){
+var infowindow;
+var showInfoWindow = function(markerObj) {
+  if(infowindow) {
+    infowindow.close();
+  }
+  var content = markerObj.content=="" ? "コメントが登録されていません。" : markerObj.content;
+  infowindow = new google.maps.InfoWindow({
+    content: content
+  });
+  return infowindow.open(map, markerObj);
+};
+
+function plotMarker(lat, lon, emotion, comment){
   mark_latlng = new google.maps.LatLng(lat, lon);
   var marker = new google.maps.Marker({
     position: mark_latlng,
     map: map,
-    icon: './feelings/img'+emotion+'.png'
+    icon: './feelings/img'+emotion+'.png',
+    content: comment
   }); 
+  google.maps.event.addListener(marker, 'mouseover', function() {
+    showInfoWindow(this);
+  });
 }
 
 function searchFeeling(){
