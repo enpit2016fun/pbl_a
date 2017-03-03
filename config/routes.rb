@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   get 'anger' => 'search#anger'
   get 'search' => 'search#index'
   post 'sensations/new' => 'sensations#new'
+  post 'sensations/update' => 'sensations#update'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

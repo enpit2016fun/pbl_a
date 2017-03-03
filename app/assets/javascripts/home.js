@@ -2,6 +2,7 @@
 // All this logic will automatically be available in application.js.
 var map;
 var flag_id = 1;
+var marker_id = 0;
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 41.84181747, lng: 140.7669687},
@@ -10,15 +11,23 @@ function initMap() {
 }
 
 $(function(){
-    map.addListener('click', function(event) {
-      addMarker(event.latLng, flag_id);
-      $.post("/sensations/new", {
-        "lat": event.latLng.lat(),
-        "lon": event.latLng.lng(),
-        "emotion": flag_id,
-        "authenticity_token": $("#authenticity_token").val()
-      })
+  map.addListener('click', function(event) {
+    addMarker(event.latLng, flag_id);
+    $.post("/sensations/new", {
+      "lat": event.latLng.lat(),
+      "lon": event.latLng.lng(),
+      "emotion": flag_id,
+      "authenticity_token": $("#authenticity_token").val()
+    })
+  });
+  $('#confirm').on('click', function(event){
+    $.post("/sensations/update",{
+      "id": marker_id,
+      "comment": $('#comment-field').val(),
+      "authenticity_token": $("#authenticity_token").val()
     });
+    location.reload()
+  });
 });
 
 var infowindow;
@@ -26,20 +35,27 @@ var showInfoWindow = function(markerObj) {
   if(infowindow) {
     infowindow.close();
   }
-  var content = markerObj.content=="" ? "コメントが登録されていません。" : markerObj.content;
+  var editBtn = "<div align=\"center\"><button data-target=\"modal-edit\" class=\"waves-effect btn btn-tiny grey darken-1 modal-trigger\">編集する<i class=\"material-icons\">mode_edit</i></button></div>";
+  var comment = markerObj.content;
+  var content = comment=="" ? "<div>コメントが登録されていません。<br><br>"+editBtn+"</div>" : "<div>"+markerObj.content+"<br><br>"+editBtn+"</div>";
   infowindow = new google.maps.InfoWindow({
     content: content
   });
-  return infowindow.open(map, markerObj);
+  infowindow.open(map, markerObj);
+  marker_id = markerObj.id;
+  $('#comment-field').attr('placeholder', comment);
+  $('#comment-field').val('');
+  $('.modal-trigger').leanModal();
 };
 
-function plotMarker(lat, lon, emotion, comment){
+function plotMarker(lat, lon, emotion, comment, id){
   mark_latlng = new google.maps.LatLng(lat, lon);
   var marker = new google.maps.Marker({
     position: mark_latlng,
     map: map,
     icon: './feelings/img'+emotion+'.png',
-    content: comment
+    content: comment,
+    id: id
   });
   google.maps.event.addListener(marker, 'mouseover', function() {
     showInfoWindow(this);

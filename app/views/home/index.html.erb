@@ -45,7 +45,7 @@
 
     <% Array(@sensations).each do |sensation| %>
       <script language="JavaScript">
-        plotMarker(<%= sensation.lat %>, <%= sensation.lon %>, <%= sensation.emotion %>, '<%= sensation.comment%>');
+        plotMarker(<%= sensation.lat %>, <%= sensation.lon %>, <%= sensation.emotion %>, '<%= sensation.comment%>', <%= sensation.id%>);
       </script>
     <% end %>
     
@@ -77,5 +77,19 @@
         </a>
       </div><!--#icons-->
     </div><!--#bottom_bar-->
+
+    <!-- Modal Structure -->
+    <div id="modal-edit" class="modal">
+      <div class="modal-content">
+        <div class="input-field col s12">
+          <input id="comment-field" type="text" class="validate" placeholder="">
+          <label for="comment-field">コメントを編集する</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a id="confirm" class="modal-action modal-close waves-effect btn-flat">送信</a>
+        <a id="cancel" class="modal-action modal-close waves-effect btn-flat">中止</a>
+      </div>
+    </div>
   </body>
 </html>
